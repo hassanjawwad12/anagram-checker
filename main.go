@@ -8,9 +8,10 @@ func CheckIfStringsAreAnagram(s string, t string) bool {
 		return false
 	}
 
-	sourceMap := make(map[rune]int)
+	sourceMap := make(map[rune]int) // Store frequency of each charcater
 	targetMap := make(map[rune]int)
 
+	// The string is iterated and character with its count is stored
 	for _, letter := range s {
 		sourceMap[letter]++
 	}
@@ -19,9 +20,17 @@ func CheckIfStringsAreAnagram(s string, t string) bool {
 		targetMap[letter]++
 	}
 
+	// Iterates over sourceMap to compare its values with targetMap
 	for letter, sourceCount := range sourceMap {
 
-		if targetCount, ok := targetMap[letter]; !ok || sourceCount != targetCount {
+		// If a character exists in sourceMap but not in targetMap the strings are not anagrams.
+		targetCount, ok := targetMap[letter]
+		if !ok {
+			return false
+		}
+
+		// If the frequency of a character in sourceMap (sourceCount) does not match the frequency in targetMap (targetCount), the strings are not anagrams.
+		if sourceCount != targetCount {
 			return false
 		}
 	}
