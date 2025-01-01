@@ -9,4 +9,4 @@ if targetCount, ok := targetMap[letter]; !ok || sourceCount != targetCount {
     return false
 }
 ```
-* I used the `make(map[rune]int)` to also handle the specialm character in the string but if you only want for alphabetic strings u can also use `make(map[string]int)`
+* I used the `make(map[rune]int)` to also handle the special characters in the string but if you only want to check for alphabetic strings u can also use `make(map[string]int)`
