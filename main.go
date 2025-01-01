@@ -45,4 +45,7 @@ func main() {
 
 	result := CheckIfStringsAreAnagram("hello", "olli")
 	fmt.Println(result)
+
+	specialChr := CheckIfStringsAreAnagram("*$$lo", "lo$*$")
+	fmt.Println(specialChr)
 }
